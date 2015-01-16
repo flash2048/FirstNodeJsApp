@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Чат на Node.js</title>
+    <link href="/styles/style.css" rel="stylesheet" />
+    <script src="/js/socket.io-1.2.0.js"></script>
+    <script src="/js/jquery-2.1.3.js"></script>
+</head>
+<body>
+    <ul id="messages"></ul>
+    <div id="sendForm">
+        <form action="">
+            <input id="message" autocomplete="off" /><button class="button">Отправить сообщение</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+        var socket = io();
+        socket.emit('first', "true");
+        $('form').submit(function () {
+            var message = $('#message').val();
+            if (message.length > 0) {
+                socket.emit('message', message);
+                $('#message').val('');
+            }
+            return false;
+        });
+        socket.on('message', function (msg) {
+            $('#messages').append($('<li>').text(msg));
+        });
+    </script>
+</body>
+</html>

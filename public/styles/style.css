@@ -1,0 +1,57 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #BCEFFF;
+}
+
+li {
+    list-style-type: none;
+    padding-left: 20px;
+    min-height: 30px;
+    border-bottom: 1px solid black;
+    font-style: italic;
+}
+
+#messages {
+    background: #BCEFFF;
+    margin: 0;
+}
+
+#sendForm {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#message {
+    width: 88%;
+    height: 40px;
+    font-style: italic;
+    font-size: 18px;
+}
+
+li:nth-child(odd) {
+    background: #eee;
+}
+
+.button {
+    width: 10%;
+    color: #fff; 
+    text-decoration: none; 
+    user-select: none;
+    padding: 10px;
+    background: rgb(212,75,56); 
+    outline: none;
+}
+
+    .button:hover {
+        background: rgb(232,95,76);
+    }
+
+    .button:active {
+        background: rgb(152,15,0);
+    }
+
